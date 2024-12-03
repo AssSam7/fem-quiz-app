@@ -18,11 +18,6 @@
 }
 
 @layer base {
-  body {
-    @apply font-rubik-regular bg-no-repeat bg-cover bg-light-bluish;
-    background-image: url("./assets/images/pattern-background-desktop-light.svg");
-    background-position: 0% 12%;
-  }
   h1 {
     @apply text-3xl;
   }
@@ -35,10 +30,20 @@
 }
 
 @layer components {
+  .wrapper {
+    @apply w-full h-[100vh] font-rubik-regular bg-no-repeat bg-cover bg-light-bluish;
+    background-image: url("./assets/images/pattern-background-desktop-light.svg");
+    background-position: 0% 12%;
+  }
   .container {
     @apply w-[80vw];
   }
   .logo {
     @apply flex gap-5 items-center justify-center w-[56px] h-[56px] rounded-md;
+  }
+
+  .bg-dark-img {
+    @apply bg-dark-navy;
+    background-image: url("./assets/images/pattern-background-desktop-dark.svg");
   }
 }
