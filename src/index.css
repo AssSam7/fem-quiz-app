@@ -1,0 +1,44 @@
+@tailwind utilities;
+@tailwind base;
+@tailwind components;
+
+@font-face {
+  font-family: "Rubik Medium";
+  src: url("./assets/fonts/static/Rubik-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Rubik Italic";
+  src: url("./assets/fonts/static/Rubik-Italic.ttf");
+}
+
+@font-face {
+  font-family: "Rubik Regular";
+  src: url("./assets/fonts/static/Rubik-Regular.ttf");
+}
+
+@layer base {
+  body {
+    @apply font-rubik-regular bg-no-repeat bg-cover bg-light-bluish;
+    background-image: url("./assets/images/pattern-background-desktop-light.svg");
+    background-position: 0% 12%;
+  }
+  h1 {
+    @apply text-3xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+}
+
+@layer components {
+  .container {
+    @apply w-[80vw];
+  }
+  .logo {
+    @apply flex gap-5 items-center justify-center w-[56px] h-[56px] rounded-md;
+  }
+}
