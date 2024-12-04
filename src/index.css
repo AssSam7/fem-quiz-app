@@ -36,7 +36,11 @@
     background-position: 0% 12%;
   }
   .container {
-    @apply w-[80vw];
+    @apply w-[80vw] p-5;
+  }
+
+  .header {
+    @apply flex justify-between items-center;
   }
   .logo {
     @apply flex gap-5 items-center justify-center w-[56px] h-[56px] rounded-md;
