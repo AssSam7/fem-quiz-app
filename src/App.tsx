@@ -3,11 +3,11 @@ import { ThemeProvider } from "./context/Theme";
 import useAppData from "./hooks/useAppData";
 
 function App() {
-  const { themeMode, setDarkMode, setLightMode } = useAppData();
+  const { themeMode, themeModeClass, setDarkMode, setLightMode } = useAppData();
 
   return (
     <ThemeProvider value={{ themeMode, setDarkMode, setLightMode }}>
-      <div className={`wrapper ${themeMode === "dark" ? "bg-dark-img" : ""}`}>
+      <div className={`wrapper ${themeModeClass}`}>
         <main className="container">
           <Header iconUrl="../images/icon-html.svg" hasLogo />
         </main>

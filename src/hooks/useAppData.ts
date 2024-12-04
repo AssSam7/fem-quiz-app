@@ -11,6 +11,8 @@ const useAppData = () => {
     setThemeMode("light");
   };
 
+  const themeModeClass = themeMode === "dark" ? "bg-dark-img" : "";
+
   useEffect(() => {
     document.querySelector("html")?.classList.remove("dark", "light");
     document.querySelector("html")?.classList.add(themeMode);
@@ -18,6 +20,7 @@ const useAppData = () => {
 
   return {
     themeMode,
+    themeModeClass,
     setDarkMode,
     setLightMode,
   };

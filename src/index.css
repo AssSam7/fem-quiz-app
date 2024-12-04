@@ -36,7 +36,7 @@
     background-position: 0% 12%;
   }
   .container {
-    @apply w-[80vw] p-5;
+    @apply w-[80vw] pt-[50px];
   }
 
   .header {
