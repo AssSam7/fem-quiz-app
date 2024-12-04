@@ -1,15 +1,15 @@
-// @flow
-import * as React from "react";
+import { useEffect, useState } from "react";
+
 type Props = {
   url: string;
 };
 export const Icon = (props: Props) => {
   const { url } = props;
-  const [icon, setIcon] = React.useState("");
+  const [icon, setIcon] = useState("");
 
-  React.useEffect(() => {
+  useEffect(() => {
     async function importIcon() {
-      const importedIcon = await import(`../assets/images/${url}`);
+      const importedIcon = await import(`${url}`);
       setIcon(importedIcon.default);
     }
     console.log(icon);

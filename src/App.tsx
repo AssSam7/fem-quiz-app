@@ -10,7 +10,7 @@ function App() {
     <ThemeProvider value={{ themeMode, setDarkMode, setLightMode }}>
       <div className={`wrapper ${themeModeClass}`}>
         <main className="container">
-          <Header iconUrl="../images/icon-html.svg" hasLogo />
+          <Header iconUrl="../assets/images/icon-html.svg" hasLogo />
           <WelcomeCard />
         </main>
       </div>

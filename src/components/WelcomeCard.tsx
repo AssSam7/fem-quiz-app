@@ -3,13 +3,25 @@ import { WelcomeContent } from "./WelcomeContent";
 
 export const WelcomeCard = () => {
   const data = [
-    { title: "HTML", icon: "../images/icon-html.svg", bgColor: "#FFF1E9" },
-    { title: "CSS", icon: "../images/icon-css.svg", bgColor: "#E0FDEF" },
-    { title: "Javascript", icon: "../images/icon-js.svg", bgColor: "#EBF0FF" },
+    {
+      title: "HTML",
+      icon: "../assets/images/icon-html.svg",
+      iconFillColor: "#FFF1E9",
+    },
+    {
+      title: "CSS",
+      icon: "../assets/images/icon-css.svg",
+      iconFillColor: "#E0FDEF",
+    },
+    {
+      title: "Javascript",
+      icon: "../assets/images/icon-js.svg",
+      iconFillColor: "#EBF0FF",
+    },
     {
       title: "Accessibility",
-      icon: "../images/icon-accessibility.svg",
-      bgColor: "#F6E7FF",
+      icon: "../assets/images/icon-accessibility.svg",
+      iconFillColor: "#F6E7FF",
     },
   ];
   return (
