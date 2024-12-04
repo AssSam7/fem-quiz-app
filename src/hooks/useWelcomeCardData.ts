@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import data from "../context/data.json";
 
 const useWelcomeCardData = () => {
-  const [subjects, setSubjects] = useState(data.quizzes);
+  const [quiz, setQuiz] = useState(data.quizzes);
 
-  const setSubjectData = () => {
-    const transformedSubjects = subjects.map((sub) => {
+  useEffect(() => {
+    const transformedSubjects = quiz.map((sub) => {
       if (sub.title === "HTML") {
         return { ...sub, iconFillColor: "#FFF1E9" };
       } else if (sub.title === "CSS") {
@@ -15,14 +15,10 @@ const useWelcomeCardData = () => {
       }
       return { ...sub, iconFillColor: "#F6E7FF" };
     });
-    setSubjects(transformedSubjects);
-  };
-
-  useEffect(() => {
-    setSubjectData();
+    setQuiz(transformedSubjects);
   }, []);
 
-  return { subjects, setSubjectData };
+  return { quiz, setQuiz };
 };
 
 export default useWelcomeCardData;

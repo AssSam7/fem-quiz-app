@@ -1,6 +1,7 @@
 {
   "quizzes": [
     {
+      "id": 1,
       "title": "HTML",
       "icon": "../assets/images/icon-html.svg",
       "questions": [
@@ -82,6 +83,7 @@
       ]
     },
     {
+      "id": 2,
       "title": "CSS",
       "icon": "../assets/images/icon-css.svg",
       "questions": [
@@ -158,6 +160,7 @@
       ]
     },
     {
+      "id": 3,
       "title": "JavaScript",
       "icon": "../assets/images/icon-js.svg",
       "questions": [
@@ -254,6 +257,7 @@
       ]
     },
     {
+      "id": 4,
       "title": "Accessibility",
       "icon": "../assets/images/icon-accessibility.svg",
       "questions": [
