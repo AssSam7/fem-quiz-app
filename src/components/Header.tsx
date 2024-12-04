@@ -9,7 +9,7 @@ export const Header = (props: HeaderProps) => {
   const { hasLogo, iconUrl } = props;
   return (
     <div className="header">
-      {hasLogo ? <Logo iconUrl={iconUrl} bgColor="#FFF1E9" /> : null}
+      {hasLogo ? <Logo icon={iconUrl} bgColor="#FFF1E9" /> : null}
       <ThemeSwitcher />
     </div>
   );

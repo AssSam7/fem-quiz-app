@@ -1,4 +1,4 @@
-import { Option } from "./Option";
+import { OptionList } from "./OptionList";
 import { WelcomeContent } from "./WelcomeContent";
 
 export const WelcomeCard = () => {
@@ -15,16 +15,7 @@ export const WelcomeCard = () => {
   return (
     <div className="welcome-card">
       <WelcomeContent />
-      <ul className="w-[35vw] flex flex-col justify-between">
-        {data.map((item, i) => (
-          <Option
-            id={i + 1}
-            title={item.title}
-            iconUrl={item.icon}
-            iconFillColor={item.bgColor}
-          />
-        ))}
-      </ul>
+      <OptionList className="option-list" list={data} />
     </div>
   );
 };

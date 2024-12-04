@@ -1,17 +1,13 @@
 // @flow
 import { Logo } from "./Logo";
-type Props = {
-  id: number;
-  title: string;
-  iconUrl?: string;
-  iconFillColor?: string;
-};
-export const Option = (props: Props) => {
-  const { id, title, iconUrl, iconFillColor } = props;
+import { OptionType } from "./OptionList";
+
+export const Option = (props: OptionType) => {
+  const { id, title, icon, iconFillColor } = props;
 
   return (
     <li className="option">
-      {iconUrl && <Logo key={id} bgColor={iconFillColor} iconUrl={iconUrl} />}
+      {icon && <Logo key={id} bgColor={iconFillColor} icon={icon} />}
       <p className="text-dark-navy font-medium text-base dark:text-pure-white">
         {title}
       </p>

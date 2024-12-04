@@ -1,16 +1,16 @@
 import { Icon } from "./Icon";
 
 type LogoProps = {
-  iconUrl: string;
+  icon: string;
   bgColor?: string;
 };
 
 export const Logo = (props: LogoProps) => {
-  const { iconUrl, bgColor } = props;
+  const { icon, bgColor } = props;
 
   return (
     <div className="logo" style={{ backgroundColor: bgColor }}>
-      <Icon url={iconUrl} />
+      <Icon url={icon} />
     </div>
   );
 };
