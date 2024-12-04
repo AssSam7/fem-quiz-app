@@ -34,10 +34,18 @@ body {
     background-image: url("./assets/images/pattern-background-desktop-light.svg");
     background-position: 0% 12%;
   }
+  /* Dark Background Img */
+  .bg-dark-img {
+    @apply bg-dark-navy;
+    background-image: url("./assets/images/pattern-background-desktop-dark.svg");
+  }
+
+  /* Main Container */
   .container {
     @apply w-[80vw] pt-[50px];
   }
 
+  /* Header Section */
   .header {
     @apply flex justify-between items-center;
   }
@@ -45,11 +53,7 @@ body {
     @apply flex gap-5 items-center justify-center w-[56px] h-[56px] rounded-md;
   }
 
-  .bg-dark-img {
-    @apply bg-dark-navy;
-    background-image: url("./assets/images/pattern-background-desktop-dark.svg");
-  }
-
+  /* Welcome Card */
   .welcome-card {
     @apply mt-[60px] h-[58vh] flex justify-between;
   }
