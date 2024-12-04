@@ -22,9 +22,8 @@ export default {
       "3xl": ["144px", "100%"],
     },
     fontFamily: {
-      "rubik-regular": ["Rubik Regular"],
-      "rubik-italic": ["Rubik Italic"],
-      "rubik-medium": ["Rubik Medium"],
+      rubik: ["Rubik", "sans-serif"],
+      "rubik-italic": ["Rubik Italic", "sans-serif"],
     },
     colors: {
       purple: "#A729F5",

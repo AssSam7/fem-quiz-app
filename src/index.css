@@ -3,18 +3,17 @@
 @tailwind components;
 
 @font-face {
-  font-family: "Rubik Medium";
-  src: url("./assets/fonts/static/Rubik-Medium.ttf");
+  font-family: "Rubik";
+  src: url("./assets/fonts/Rubik-VariableFont_wght.ttf");
 }
 
 @font-face {
   font-family: "Rubik Italic";
-  src: url("./assets/fonts/static/Rubik-Italic.ttf");
+  src: url("./assets/fonts/Rubik-Italic-VariableFont_wght.ttf");
 }
 
-@font-face {
-  font-family: "Rubik Regular";
-  src: url("./assets/fonts/static/Rubik-Regular.ttf");
+body {
+  font-family: "Rubik", sans-serif;
 }
 
 @layer base {
@@ -31,7 +30,7 @@
 
 @layer components {
   .wrapper {
-    @apply w-full h-[100vh] font-rubik-regular bg-no-repeat bg-cover bg-light-bluish;
+    @apply w-full h-[100vh] bg-no-repeat bg-cover bg-light-bluish;
     background-image: url("./assets/images/pattern-background-desktop-light.svg");
     background-position: 0% 12%;
   }
@@ -49,5 +48,9 @@
   .bg-dark-img {
     @apply bg-dark-navy;
     background-image: url("./assets/images/pattern-background-desktop-dark.svg");
+  }
+
+  .welcome-content {
+    @apply w-[35vw] flex flex-col gap-[48px];
   }
 }

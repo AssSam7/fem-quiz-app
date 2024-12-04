@@ -1,4 +1,5 @@
 import { Header } from "./components/Header";
+import { WelcomeCard } from "./components/WelcomeCard";
 import { ThemeProvider } from "./context/Theme";
 import useAppData from "./hooks/useAppData";
 
@@ -10,6 +11,7 @@ function App() {
       <div className={`wrapper ${themeModeClass}`}>
         <main className="container">
           <Header iconUrl="../images/icon-html.svg" hasLogo />
+          <WelcomeCard />
         </main>
       </div>
     </ThemeProvider>
