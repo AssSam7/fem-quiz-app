@@ -1,4 +1,4 @@
-import useTheme from "../context/Theme";
+import useQuiz from "../context/Quiz";
 import { Icon } from "./Icon";
 
 export const ThemeSwitcher = () => {
@@ -6,7 +6,7 @@ export const ThemeSwitcher = () => {
     themeMode: theme,
     setLightMode: lightTheme,
     setDarkMode: darkTheme,
-  } = useTheme();
+  } = useQuiz();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const darkModeStatus = e.currentTarget.checked;

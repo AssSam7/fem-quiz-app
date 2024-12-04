@@ -7,22 +7,28 @@ type Question = {
   answer: string;
 };
 
-type Quiz = {
+export type Quiz = {
   id: number;
   title: string;
   icon: string;
   questions: Question[];
 };
 
-export const QuizSubjectsContext = createContext({
+export const QuizContext = createContext({
   quiz: data.quizzes,
   setQuiz: (data: Quiz[]) => {
     console.log(data);
   },
+  // questionNumber: 1,
+  // totalQuestions: null,
+  // nextQues: () => {},
+  themeMode: "light",
+  setDarkMode: () => {},
+  setLightMode: () => {},
 });
 
-export const QuizSubjectProvider = QuizSubjectsContext.Provider;
+export const QuizProvider = QuizContext.Provider;
 
-export default function useQuizSubjects() {
-  return useContext(QuizSubjectsContext);
+export default function useQuiz() {
+  return useContext(QuizContext);
 }

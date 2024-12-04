@@ -1,8 +1,8 @@
-import useTheme from "../context/Theme";
+import useQuiz from "../context/Quiz";
 
 // @flow
 export const WelcomeContent = () => {
-  const { themeMode } = useTheme();
+  const { themeMode } = useQuiz();
 
   return (
     <div
