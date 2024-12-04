@@ -2,7 +2,7 @@ import { Icon } from "./Icon";
 
 type LogoProps = {
   iconUrl: string;
-  bgColor: string;
+  bgColor?: string;
 };
 
 export const Logo = (props: LogoProps) => {

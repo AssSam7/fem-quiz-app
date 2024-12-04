@@ -50,7 +50,19 @@ body {
     background-image: url("./assets/images/pattern-background-desktop-dark.svg");
   }
 
+  .welcome-card {
+    @apply mt-[60px] h-[58vh] flex justify-between;
+  }
+
   .welcome-content {
     @apply w-[35vw] flex flex-col gap-[48px];
+  }
+
+  .option {
+    @apply list-none cursor-pointer;
+    @apply flex-1 max-h-[96px] w-full rounded-[24px] bg-pure-white dark:bg-navy;
+    @apply shadow-lg;
+    @apply p-[20px] flex items-center gap-7;
+    @apply hover:translate-y-[-5px] transition-all;
   }
 }
