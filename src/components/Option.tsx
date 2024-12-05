@@ -1,19 +1,37 @@
 // @flow
-import { QuizSubject } from "../types";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { startQuiz } from "../features/quiz/quizSlice";
 import { Logo } from "./Logo";
 
-type Props = QuizSubject & {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Props = (any | string[]) & {
   handleOptionClick: (subjectId: string) => void;
 };
 
 export const Option = (props: Props) => {
-  const { id, title, icon, iconFillColor, handleOptionClick } = props;
+  const { handleOptionClick } = props;
+  const dispatch = useAppDispatch();
+
+  const quizStarted = useAppSelector((state) => state.quizStarted);
+
+  const handleClick = () => {
+    handleOptionClick(props?.id);
+    if (!quizStarted) {
+      dispatch(startQuiz());
+    }
+  };
 
   return (
-    <li className="option" role="button" onClick={() => handleOptionClick(id)}>
-      {icon && <Logo key={id} bgColor={iconFillColor} icon={icon} />}
+    <li className="option" role="button" onClick={handleClick}>
+      {props?.icon && (
+        <Logo
+          key={props?.id}
+          bgColor={props?.iconFillColor}
+          icon={props?.icon}
+        />
+      )}
       <p className="text-dark-navy font-medium text-base dark:text-pure-white">
-        {title}
+        {props?.title}
       </p>
     </li>
   );

@@ -21,6 +21,8 @@ const initialState: QuizSliceInitialState = {
   subjectId: null,
   quizStarted: false,
   quizQuestions: null,
+  currentQuestionIndex: null,
+  totalQuestions: null,
 };
 
 export const quizSlice = createSlice({
@@ -29,14 +31,19 @@ export const quizSlice = createSlice({
   reducers: {
     selectQuizSubject: (state, action: PayloadAction<string>) => {
       state.subjectId = action.payload;
-      state.quizStarted = true;
-      state.quizQuestions = state.quizSubjects.filter(
-        (sub) => sub.id === action.payload
+    },
+    startQuiz: (state) => {
+      const filteredQuizSubjects = state.quizSubjects.filter(
+        (sub) => state.subjectId === sub.id
       )[0];
+      state.quizStarted = true;
+      state.quizQuestions = filteredQuizSubjects;
+      state.currentQuestionIndex = 0;
+      state.totalQuestions = filteredQuizSubjects.questions.length;
     },
   },
 });
 
-export const { selectQuizSubject } = quizSlice.actions;
+export const { selectQuizSubject, startQuiz } = quizSlice.actions;
 
 export default quizSlice.reducer;

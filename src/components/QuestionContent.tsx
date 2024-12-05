@@ -1,9 +1,9 @@
 import useQuiz from "../context/Theme";
 
 type Props = {
-  question: string;
-  questionNumber: number;
-  totalQuestions: number;
+  question: string | null;
+  questionNumber: number | null;
+  totalQuestions: number | null;
 };
 
 export const QuestionContent = ({

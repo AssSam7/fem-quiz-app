@@ -1,4 +1,5 @@
 import { Header } from "./components/Header";
+import { QuestionContent } from "./components/QuestionContent";
 import { QuizCard } from "./components/QuizCard";
 import { WelcomeContent } from "./components/WelcomeContent";
 import { ThemeProvider } from "./context/Theme";
@@ -10,8 +11,9 @@ function App() {
     themeModeClass,
     setDarkMode,
     setLightMode,
-    quizSubjects,
     quizStarted,
+    currentQuestionIndex,
+    totalQuestions,
   } = useAppData();
 
   return (
@@ -20,8 +22,20 @@ function App() {
         <main className="container">
           <Header />
 
-          <QuizCard list={quizSubjects}>
-            {!quizStarted ? <WelcomeContent /> : null}
+          <QuizCard>
+            {quizStarted ? (
+              <QuestionContent
+                question=""
+                questionNumber={
+                  currentQuestionIndex !== null
+                    ? currentQuestionIndex + 1
+                    : null
+                }
+                totalQuestions={totalQuestions}
+              />
+            ) : (
+              <WelcomeContent />
+            )}
           </QuizCard>
         </main>
       </div>

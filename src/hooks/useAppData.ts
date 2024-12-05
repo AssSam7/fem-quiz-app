@@ -24,6 +24,10 @@ const useAppData = () => {
   const quizSubjects = useAppSelector((state) => state.quizSubjects);
   const quizStarted = useAppSelector((state) => state.quizStarted);
   const quizQuestions = useAppSelector((state) => state.quizQuestions);
+  const currentQuestionIndex = useAppSelector(
+    (state) => state.currentQuestionIndex
+  );
+  const totalQuestions = useAppSelector((state) => state.totalQuestions);
 
   return {
     themeMode,
@@ -33,6 +37,8 @@ const useAppData = () => {
     quizSubjects,
     quizStarted,
     quizQuestions,
+    currentQuestionIndex,
+    totalQuestions,
   };
 };
 
