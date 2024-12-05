@@ -1,6 +1,6 @@
+import { OptionType } from "../types";
 import { OptionList } from "./OptionList";
-import { WelcomeContent } from "./WelcomeContent";
-import { OptionType } from "./OptionList"; // Import OptionType from OptionList
+import { WelcomeContent } from "./WelcomeContent"; // Import OptionType from OptionList
 
 type Props = {
   list: OptionType[]; // Change type of list prop to OptionType[]

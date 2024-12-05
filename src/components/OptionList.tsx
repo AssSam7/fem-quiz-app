@@ -1,13 +1,6 @@
 // @flow
+import { OptionType } from "../types";
 import { Option } from "./Option";
-
-export type OptionType = {
-  id: number;
-  title: string;
-  icon?: string;
-  iconFillColor?: string;
-  handleClick?: () => void;
-};
 
 type Props = {
   className?: string;
