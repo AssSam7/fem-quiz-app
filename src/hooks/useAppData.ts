@@ -22,7 +22,6 @@ const useAppData = () => {
 
   /* Quiz Slice */
   const quizSubjects = useAppSelector((state) => state.quizSubjects);
-  const quizQuestions = useAppSelector((state) => state.quizQuestions);
 
   return {
     themeMode,
@@ -30,7 +29,6 @@ const useAppData = () => {
     setDarkMode,
     setLightMode,
     quizSubjects,
-    quizQuestions,
   };
 };
 

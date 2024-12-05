@@ -9,7 +9,7 @@ const getTransformedSubjects = () => {
       return { ...sub, iconFillColor: "#FFF1E9" };
     } else if (subject.title === "CSS") {
       return { ...sub, iconFillColor: "#E0FDEF" };
-    } else if (subject.title === "Javascript") {
+    } else if (subject.title === "JavaScript") {
       return { ...sub, iconFillColor: "#EBF0FF" };
     }
     return { ...sub, iconFillColor: "#F6E7FF" };
