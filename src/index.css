@@ -30,8 +30,8 @@ body {
 
 @layer components {
   .wrapper {
-    @apply w-full h-[100vh] bg-no-repeat bg-cover bg-light-bluish;
-    background-image: url("./assets/images/pattern-background-desktop-light.svg");
+    @apply w-full min-h-[100vh] md:h-[120vh] bg-no-repeat bg-cover bg-light-bluish;
+    @apply bg-[url('./assets/images/pattern-background-desktop-light.svg')] md:bg-[url('./assets/images/pattern-background-tablet-light.svg')];
     background-position: 0% 12%;
   }
   /* Dark Background Img */
@@ -42,12 +42,12 @@ body {
 
   /* Main Container */
   .container {
-    @apply w-[80vw] pt-[50px];
+    @apply w-[80vw] pt-[50px] md:pt-0 md:h-full;
   }
 
   /* Header Section */
   .header {
-    @apply flex justify-between items-center;
+    @apply flex justify-between items-center md:pt-10;
   }
   .logo {
     @apply flex gap-5 items-center justify-center w-[56px] h-[56px] rounded-md;
@@ -55,11 +55,11 @@ body {
 
   /* Quiz Card */
   .quiz-card {
-    @apply mt-[60px] h-[58vh] flex justify-between;
+    @apply mt-[60px] h-[58vh] flex md:flex-col justify-between md:justify-normal md:gap-[64px];
   }
 
   .welcome-content {
-    @apply w-[35vw] flex flex-col gap-[48px];
+    @apply w-[35vw] md:w-full md:text-center flex flex-col gap-[48px] md:gap-3;
   }
 
   /* Question */
@@ -72,12 +72,12 @@ body {
     @apply flex flex-col gap-5;
   }
   .option-list {
-    @apply w-[35vw] flex-1 flex flex-col justify-between gap-5;
+    @apply w-[35vw] md:w-full flex-1 flex flex-col justify-between gap-5;
   }
 
   .option {
     @apply list-none cursor-pointer;
-    @apply flex-1 h-[96px] w-full rounded-[24px] bg-pure-white dark:bg-navy;
+    @apply h-[96px] md:h-[80px] w-full rounded-[24px] bg-pure-white dark:bg-navy;
     @apply shadow-lg;
     @apply p-[20px] flex items-center gap-7;
     @apply hover:translate-y-[-5px] transition-all;
