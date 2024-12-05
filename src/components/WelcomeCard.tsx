@@ -1,9 +1,9 @@
-import { Quiz } from "../context/Quiz";
 import { OptionList } from "./OptionList";
 import { WelcomeContent } from "./WelcomeContent";
+import { OptionType } from "./OptionList"; // Import OptionType from OptionList
 
 type Props = {
-  list: Quiz[];
+  list: OptionType[]; // Change type of list prop to OptionType[]
 };
 export const WelcomeCard = ({ list: quiz }: Props) => {
   return (

@@ -1,29 +1,21 @@
 import { Header } from "./components/Header";
 import { WelcomeCard } from "./components/WelcomeCard";
-import { QuizProvider } from "./context/Quiz";
+import { ThemeProvider } from "./context/Theme";
 import useAppData from "./hooks/useAppData";
+import data from "./data.json";
 
 function App() {
-  const {
-    quiz,
-    setQuiz,
-    themeMode,
-    themeModeClass,
-    setDarkMode,
-    setLightMode,
-  } = useAppData();
+  const { themeMode, themeModeClass, setDarkMode, setLightMode } = useAppData();
 
   return (
-    <QuizProvider
-      value={{ quiz, setQuiz, themeMode, setDarkMode, setLightMode }}
-    >
+    <ThemeProvider value={{ themeMode, setDarkMode, setLightMode }}>
       <div className={`wrapper ${themeModeClass}`}>
         <main className="container">
           <Header iconUrl="../assets/images/icon-html.svg" />
-          <WelcomeCard list={quiz} />
+          <WelcomeCard list={data.quizzes} />
         </main>
       </div>
-    </QuizProvider>
+    </ThemeProvider>
   );
 }
 

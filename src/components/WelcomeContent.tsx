@@ -1,4 +1,4 @@
-import useQuiz from "../context/Quiz";
+import useQuiz from "../context/Theme";
 
 // @flow
 export const WelcomeContent = () => {
