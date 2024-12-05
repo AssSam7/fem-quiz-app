@@ -5,7 +5,7 @@ export type QuizQuestion = {
 };
 
 export type QuizSubject = {
-  id?: string;
+  id: string;
   title: string;
   icon: string;
   iconFillColor?: string;
@@ -18,6 +18,7 @@ export type QuizSliceInitialState = {
   quizSubjects: QuizSubjects;
   quizStarted: boolean;
   subjectId: string | null;
+  quizQuestions: QuizSubject | null;
 };
 
 export type OptionType = {

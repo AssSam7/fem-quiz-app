@@ -20,6 +20,7 @@ const initialState: QuizSliceInitialState = {
   quizSubjects: getTransformedSubjects(),
   subjectId: null,
   quizStarted: false,
+  quizQuestions: null,
 };
 
 export const quizSlice = createSlice({
@@ -29,6 +30,9 @@ export const quizSlice = createSlice({
     selectQuizSubject: (state, action: PayloadAction<string>) => {
       state.subjectId = action.payload;
       state.quizStarted = true;
+      state.quizQuestions = state.quizSubjects.filter(
+        (sub) => sub.id === action.payload
+      )[0];
     },
   },
 });
