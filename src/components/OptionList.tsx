@@ -1,10 +1,10 @@
 // @flow
-import { OptionType } from "../types";
+import { QuizSubject } from "../types";
 import { Option } from "./Option";
 
 type Props = {
   className?: string;
-  list: OptionType[];
+  list: QuizSubject[];
 };
 
 export const OptionList = (props: Props) => {

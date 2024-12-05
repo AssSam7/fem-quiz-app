@@ -1,9 +1,9 @@
-import { OptionType } from "../types";
+import { QuizSubject } from "../types";
 import { OptionList } from "./OptionList";
 import { WelcomeContent } from "./WelcomeContent"; // Import OptionType from OptionList
 
 type Props = {
-  list: OptionType[]; // Change type of list prop to OptionType[]
+  list: QuizSubject[]; // Change type of list prop to OptionType[]
 };
 export const WelcomeCard = ({ list: quiz }: Props) => {
   return (

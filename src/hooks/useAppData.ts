@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useAppSelector } from "../app/hooks";
 
 const useAppData = () => {
+  /* Theme Switcher Code */
   const [themeMode, setThemeMode] = useState("light");
 
   const setDarkMode = () => {
@@ -18,11 +20,15 @@ const useAppData = () => {
     document.querySelector("html")?.classList.add(themeMode);
   }, [themeMode]);
 
+  /* Quiz Slice */
+  const quizSubjects = useAppSelector((state) => state?.quizSubjects);
+
   return {
     themeMode,
     themeModeClass,
     setDarkMode,
     setLightMode,
+    quizSubjects,
   };
 };
 
