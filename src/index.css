@@ -53,8 +53,8 @@ body {
     @apply flex gap-5 items-center justify-center w-[56px] h-[56px] rounded-md;
   }
 
-  /* Welcome Card */
-  .welcome-card {
+  /* Quiz Card */
+  .quiz-card {
     @apply mt-[60px] h-[58vh] flex justify-between;
   }
 
