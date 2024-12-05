@@ -21,4 +21,7 @@ export type QuizSliceInitialState = {
   quizQuestions: QuizSubject | null;
   currentQuestionIndex: number | null;
   totalQuestions: number | null;
+  currentQuestion: string | null;
+  currentOptions: string[] | null;
+  currentAnswer: string | null;
 };

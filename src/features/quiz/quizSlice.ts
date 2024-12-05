@@ -23,6 +23,9 @@ const initialState: QuizSliceInitialState = {
   quizQuestions: null,
   currentQuestionIndex: null,
   totalQuestions: null,
+  currentQuestion: null,
+  currentOptions: null,
+  currentAnswer: null,
 };
 
 export const quizSlice = createSlice({
@@ -40,6 +43,9 @@ export const quizSlice = createSlice({
       state.quizQuestions = filteredQuizSubjects;
       state.currentQuestionIndex = 0;
       state.totalQuestions = filteredQuizSubjects.questions.length;
+      state.currentQuestion = filteredQuizSubjects.questions[0].question;
+      state.currentOptions = filteredQuizSubjects.questions[0].options;
+      state.currentAnswer = filteredQuizSubjects.questions[0].answer;
     },
   },
 });

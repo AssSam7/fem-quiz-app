@@ -21,7 +21,7 @@ export const QuestionContent = ({
       <h4 className="font-rubik-italic font-light text-grey-navy dark:text-light-bluish text-[20px]">
         Question {questionNumber} of {totalQuestions}
       </h4>
-      <h3 className="text-dark-navy dark:text-pure-white font-extralight">
+      <h3 className="text-dark-navy dark:text-pure-white font-normal">
         {question}
       </h3>
     </div>

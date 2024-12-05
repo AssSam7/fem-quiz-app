@@ -1,20 +1,11 @@
 import { Header } from "./components/Header";
-import { QuestionContent } from "./components/QuestionContent";
 import { QuizCard } from "./components/QuizCard";
-import { WelcomeContent } from "./components/WelcomeContent";
+import { QuizContent } from "./components/QuizContent";
 import { ThemeProvider } from "./context/Theme";
 import useAppData from "./hooks/useAppData";
 
 function App() {
-  const {
-    themeMode,
-    themeModeClass,
-    setDarkMode,
-    setLightMode,
-    quizStarted,
-    currentQuestionIndex,
-    totalQuestions,
-  } = useAppData();
+  const { themeMode, themeModeClass, setDarkMode, setLightMode } = useAppData();
 
   return (
     <ThemeProvider value={{ themeMode, setDarkMode, setLightMode }}>
@@ -23,19 +14,7 @@ function App() {
           <Header />
 
           <QuizCard>
-            {quizStarted ? (
-              <QuestionContent
-                question=""
-                questionNumber={
-                  currentQuestionIndex !== null
-                    ? currentQuestionIndex + 1
-                    : null
-                }
-                totalQuestions={totalQuestions}
-              />
-            ) : (
-              <WelcomeContent />
-            )}
+            <QuizContent />
           </QuizCard>
         </main>
       </div>
