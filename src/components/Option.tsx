@@ -1,4 +1,5 @@
 // @flow
+import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { startQuiz } from "../features/quiz/quizSlice";
 import { Logo } from "./Logo";
@@ -10,6 +11,7 @@ type Props = (any | string[]) & {
 
 export const Option = (props: Props) => {
   const { handleOptionClick } = props;
+  const [hover, setHover] = useState(false);
   const dispatch = useAppDispatch();
 
   const quizStarted = useAppSelector((state) => state.quizStarted);
@@ -21,13 +23,37 @@ export const Option = (props: Props) => {
     }
   };
 
+  const getOptionName = () => {
+    if (props?.id === 1) {
+      return "A";
+    } else if (props?.id === 2) {
+      return "B";
+    } else if (props?.id === 3) {
+      return "C";
+    }
+    return "D";
+  };
+
   return (
-    <li className="option" role="button" onClick={handleClick}>
-      {props?.icon && (
+    <li
+      className="option"
+      role="button"
+      onClick={handleClick}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      {props?.icon ? (
         <Logo
           key={props?.id}
           bgColor={props?.iconFillColor}
           icon={props?.icon}
+        />
+      ) : (
+        <Logo
+          key={props?.id}
+          bgColor="#F4F6FA"
+          text={getOptionName()}
+          className={hover ? "bg-logo-hover" : ""}
         />
       )}
       <p className="text-dark-navy font-medium text-base dark:text-pure-white">

@@ -50,7 +50,7 @@ body {
     @apply flex justify-between items-center md:pt-10;
   }
   .logo {
-    @apply flex gap-5 items-center justify-center w-[56px] h-[56px] rounded-md;
+    @apply text-grey-navy flex gap-5 items-center justify-center w-[56px] h-[56px] p-3 rounded-md;
   }
 
   /* Quiz Card */
@@ -81,5 +81,18 @@ body {
     @apply shadow-lg;
     @apply p-[20px] flex items-center gap-7;
     @apply hover:translate-y-[-5px] transition-all;
+  }
+
+  .option:hover .logo {
+    @apply text-purple;
+  }
+
+  .bg-logo-hover {
+    background-color: #f6e7ff !important;
+  }
+
+  .option-hover-logo-styles {
+    @apply text-purple;
+    background-color: #f6e7ff !important;
   }
 }

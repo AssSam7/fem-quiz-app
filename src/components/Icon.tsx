@@ -17,9 +17,5 @@ export const Icon = (props: Props) => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [icon]);
-  return (
-    <div className="h-[56px] w-[56px] p-3 flex items-center justify-center">
-      <img src={icon} />
-    </div>
-  );
+  return <img src={icon} />;
 };
