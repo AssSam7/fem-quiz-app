@@ -1,4 +1,5 @@
 import useQuiz from "../context/Theme";
+import { QuestionProgress } from "./QuestionProgress";
 
 type Props = {
   question: string | null;
@@ -18,12 +19,15 @@ export const QuestionContent = ({
       className="question-content"
       style={themeMode === "dark" ? { color: "inherit" } : {}}
     >
-      <h4 className="font-rubik-italic font-light text-grey-navy dark:text-light-bluish text-[20px]">
-        Question {questionNumber} of {totalQuestions}
-      </h4>
-      <h3 className="text-dark-navy dark:text-pure-white font-normal">
-        {question}
-      </h3>
+      <div className="flex flex-col gap-7">
+        <h4 className="font-rubik-italic font-light text-grey-navy dark:text-light-bluish text-[20px]">
+          Question {questionNumber} of {totalQuestions}
+        </h4>
+        <h3 className="text-dark-navy dark:text-pure-white font-normal">
+          {question}
+        </h3>
+      </div>
+      <QuestionProgress />
     </div>
   );
 };

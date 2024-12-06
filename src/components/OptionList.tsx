@@ -29,26 +29,28 @@ export const OptionList = (props: Props) => {
   };
 
   return (
-    <div
-      className="options-container"
-      style={quizStarted ? { height: "65vh" } : {}}
-    >
-      <ul className={className}>
-        {quizOptions
-          ? quizOptions?.map((item: any, i: number) => (
-              <Option
-                key={item.id || i}
-                {...item}
-                handleOptionClick={handleOptionClick}
-              />
-            ))
-          : null}
-      </ul>
+    <>
+      <div
+        className="options-container"
+        style={quizStarted ? { height: "65vh" } : {}}
+      >
+        <ul className={className}>
+          {quizOptions
+            ? quizOptions?.map((item: any, i: number) => (
+                <Option
+                  key={item.id || i}
+                  {...item}
+                  handleOptionClick={handleOptionClick}
+                />
+              ))
+            : null}
+        </ul>
+      </div>
       {quizStarted && (
-        <button className="mt-5 bg-purple text-pure-white p-7 rounded-2xl text-base font-semibold hover:bg-purple/50">
+        <button className="mt-5 bg-purple text-pure-white p-7 rounded-2xl text-base font-semibold hover:bg-purple/50 h-[92px] col-start-2">
           Submit Answer
         </button>
       )}
-    </div>
+    </>
   );
 };

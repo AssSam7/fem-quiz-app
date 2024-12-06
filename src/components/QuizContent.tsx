@@ -6,7 +6,7 @@ export const QuizContent = () => {
   const { quizStarted, currentQuestionIndex, totalQuestions, currentQuestion } =
     useAppData();
   return (
-    <div>
+    <>
       {quizStarted ? (
         <QuestionContent
           question={currentQuestion}
@@ -18,6 +18,6 @@ export const QuizContent = () => {
       ) : (
         <WelcomeContent />
       )}
-    </div>
+    </>
   );
 };
