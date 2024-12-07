@@ -23,5 +23,7 @@ export type QuizSliceInitialState = {
   totalQuestions: number | null;
   currentQuestion: string | null;
   currentOptions: string[] | null;
-  currentAnswer: string | null;
+  correctAnswer: string | null;
+  selectedAnswer: string | null;
+  isCorrectAnswerSelected: boolean;
 };

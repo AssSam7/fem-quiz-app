@@ -2,7 +2,7 @@ import { Icon } from "./Icon";
 
 type LogoProps = {
   icon?: string;
-  bgColor: string;
+  bgColor?: string;
   text?: string;
   className?: string;
 };

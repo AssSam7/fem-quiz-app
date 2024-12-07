@@ -25,7 +25,9 @@ const initialState: QuizSliceInitialState = {
   totalQuestions: null,
   currentQuestion: null,
   currentOptions: null,
-  currentAnswer: null,
+  correctAnswer: null,
+  selectedAnswer: null,
+  isCorrectAnswerSelected: false,
 };
 
 export const quizSlice = createSlice({
@@ -45,7 +47,12 @@ export const quizSlice = createSlice({
       state.totalQuestions = filteredQuizSubjects.questions.length;
       state.currentQuestion = filteredQuizSubjects.questions[0].question;
       state.currentOptions = filteredQuizSubjects.questions[0].options;
-      state.currentAnswer = filteredQuizSubjects.questions[0].answer;
+      state.correctAnswer = filteredQuizSubjects.questions[0].answer;
+    },
+    submitAnswer: (state, action: PayloadAction<string>) => {
+      state.selectedAnswer = action.payload;
+      state.isCorrectAnswerSelected =
+        state.selectedAnswer === state.correctAnswer;
     },
   },
 });

@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // @flow
-import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { useAppDispatch } from "../app/hooks";
 import { selectQuizSubject } from "../features/quiz/quizSlice";
+import useSelectData from "../hooks/useSelectData";
 import { Option } from "./Option";
 
 type Props = {
@@ -14,9 +15,7 @@ const transformOptions = (options: string[] | null) => {
 
 export const OptionList = (props: Props) => {
   const { className } = props;
-  const quizSubjects = useAppSelector((state) => state.quizSubjects);
-  const quizStarted = useAppSelector((state) => state.quizStarted);
-  const currentOptions = useAppSelector((state) => state.currentOptions);
+  const { quizSubjects, quizStarted, currentOptions } = useSelectData();
 
   const quizOptions = quizStarted
     ? transformOptions(currentOptions)
