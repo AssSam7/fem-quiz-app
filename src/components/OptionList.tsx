@@ -11,6 +11,7 @@ export const OptionList = (props: Props) => {
     getOptionsContainerHeightStyles,
     renderOptionListButton,
     renderQuizOptions,
+    renderErrorMessage,
   } = useOptionListData();
 
   return (
@@ -22,7 +23,10 @@ export const OptionList = (props: Props) => {
         <ul className={className}>{renderQuizOptions()}</ul>
       </div>
 
-      {renderOptionListButton()}
+      <div className="col-start-2 w-full flex flex-col gap-5 text-[24px] text-red">
+        {renderOptionListButton()}
+        {renderErrorMessage()}
+      </div>
     </>
   );
 };
