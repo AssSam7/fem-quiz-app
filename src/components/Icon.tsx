@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 type Props = {
   url: string;
+  className?: string;
 };
 export const Icon = (props: Props) => {
   const { url } = props;
@@ -16,5 +17,5 @@ export const Icon = (props: Props) => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [icon]);
-  return <img src={icon} />;
+  return <img src={icon} className={props?.className} />;
 };

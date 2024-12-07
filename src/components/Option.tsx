@@ -7,12 +7,19 @@ type Props = (any | string[]) & {
 };
 
 export const Option = (props: Props) => {
-  const { setHover, handleClick, renderLogo, getOptionSelectedStyles } =
-    useOptionData(props);
+  const {
+    setHover,
+    handleClick,
+    renderLogo,
+    getOptionSelectedStyles,
+    renderResultLogo,
+  } = useOptionData(props);
 
   return (
     <li
-      className={`option ${getOptionSelectedStyles()}`}
+      className={`option ${getOptionSelectedStyles()} ${
+        props?.optionBorderStyles
+      }`}
       role="button"
       onClick={handleClick}
       onMouseEnter={() => setHover(true)}
@@ -22,6 +29,7 @@ export const Option = (props: Props) => {
       <p className="text-dark-navy font-medium text-base dark:text-pure-white">
         {props?.title}
       </p>
+      {renderResultLogo()}
     </li>
   );
 };

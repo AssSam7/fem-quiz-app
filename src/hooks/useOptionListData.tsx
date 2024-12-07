@@ -13,6 +13,7 @@ const useOptionListData = () => {
     currentOptions,
     selectedAnswer,
     isAnswerSubmitted,
+    isCorrectAnswerSelected,
   } = useSelectData();
 
   /* Variables */
@@ -30,13 +31,31 @@ const useOptionListData = () => {
   const quizOptions = quizStarted
     ? transformOptions(currentOptions)
     : quizSubjects;
+  const getOptionBorderStyles = (title: string) => {
+    if (
+      isAnswerSubmitted &&
+      isCorrectAnswerSelected &&
+      selectedAnswer === title
+    ) {
+      return "border-green border-4 option-correct";
+    } else if (
+      isAnswerSubmitted &&
+      !isCorrectAnswerSelected &&
+      selectedAnswer === title
+    ) {
+      return "border-red border-4 option-incorrect";
+    }
+    return "";
+  };
 
   /* Handler Functions */
   const handleOptionClick = (id: string) => {
     dispatch(selectQuizSubject(id));
   };
   const handleListButtonClick = () => {
-    dispatch(submitAnswer());
+    if (!isAnswerSubmitted) {
+      dispatch(submitAnswer());
+    }
   };
 
   /* Render Functions */
@@ -60,6 +79,7 @@ const useOptionListData = () => {
             key={item.id || i}
             handleOptionClick={handleOptionClick}
             {...item}
+            optionBorderStyles={getOptionBorderStyles(item.title)}
           />
         ))
       : null;

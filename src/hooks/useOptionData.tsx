@@ -11,7 +11,13 @@ type Props = (any | string[]) & {
 
 export const useOptionData = (props: Props) => {
   /* RTK Selectors */
-  const { quizStarted, selectedAnswer } = useSelectData();
+  const {
+    quizStarted,
+    selectedAnswer,
+    isAnswerSubmitted,
+    isCorrectAnswerSelected,
+    correctAnswer,
+  } = useSelectData();
 
   /* States & Consts */
   const [hover, setHover] = useState(false);
@@ -22,7 +28,7 @@ export const useOptionData = (props: Props) => {
     props.handleOptionClick(props.id);
     if (!quizStarted) {
       dispatch(startQuiz());
-    } else {
+    } else if (!isAnswerSubmitted) {
       dispatch(selectAnswer(props?.title));
     }
   };
@@ -58,6 +64,35 @@ export const useOptionData = (props: Props) => {
       />
     );
   };
+  const renderResultLogo = () => {
+    if (
+      isAnswerSubmitted &&
+      isCorrectAnswerSelected &&
+      props.title === selectedAnswer
+    ) {
+      return (
+        <Logo icon="../assets/images/icon-correct.svg" className="ml-auto" />
+      );
+    }
+    if (
+      isAnswerSubmitted &&
+      !isCorrectAnswerSelected &&
+      props.title === selectedAnswer
+    ) {
+      return (
+        <Logo icon="../assets/images/icon-incorrect.svg" className="ml-auto" />
+      );
+    }
+    if (
+      isAnswerSubmitted &&
+      !isCorrectAnswerSelected &&
+      props.title === correctAnswer
+    ) {
+      return (
+        <Logo icon="../assets/images/icon-correct.svg" className="ml-auto" />
+      );
+    }
+  };
 
   /* Return Data */
   return {
@@ -65,5 +100,6 @@ export const useOptionData = (props: Props) => {
     handleClick,
     renderLogo,
     getOptionSelectedStyles,
+    renderResultLogo,
   };
 };

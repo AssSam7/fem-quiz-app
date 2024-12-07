@@ -98,8 +98,16 @@ body {
   }
 
   /* Option Active/Selected */
-  .option.option-active .logo {
+  .option.option-active .logo:first-child {
     background-color: #a729f5 !important;
+    color: #ffffff !important;
+  }
+  .option.option-correct .logo:first-child {
+    background-color: #26d782 !important;
+    color: #ffffff !important;
+  }
+  .option.option-incorrect .logo:first-child {
+    background-color: #ee5454 !important;
     color: #ffffff !important;
   }
 }
