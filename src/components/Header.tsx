@@ -1,18 +1,12 @@
-import useSelectData from "../hooks/useSelectData";
-import { Logo } from "./Logo";
+import { useHeaderData } from "../hooks/useHeaderData";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export const Header = () => {
-  const { quizQuestions } = useSelectData();
+  const { renderHeaderLogo } = useHeaderData();
 
   return (
     <div className="header">
-      {quizQuestions?.icon ? (
-        <Logo
-          icon={quizQuestions?.icon}
-          bgColor={quizQuestions?.iconFillColor}
-        />
-      ) : null}
+      {renderHeaderLogo()}
       <ThemeSwitcher />
     </div>
   );
