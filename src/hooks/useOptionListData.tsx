@@ -1,8 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { useState } from "react";
 import { useAppDispatch } from "../app/hooks";
 import { Icon } from "../components/Icon";
 import { Option } from "../components/Option";
-import { selectQuizSubject, submitAnswer } from "../features/quiz/quizSlice";
+import {
+  proceedToNextQuestion,
+  selectQuizSubject,
+  submitAnswer,
+} from "../features/quiz/quizSlice";
 import useSelectData from "./useSelectData";
 
 const useOptionListData = () => {
@@ -16,7 +21,8 @@ const useOptionListData = () => {
     isCorrectAnswerSelected,
   } = useSelectData();
 
-  /* Variables */
+  /* States & Variables */
+  const [showErrorMsg, setShowErrorMsg] = useState(false);
   const dispatch = useAppDispatch();
   const getOptionsContainerHeightStyles = () =>
     quizStarted ? { height: "58vh" } : {};
@@ -52,9 +58,19 @@ const useOptionListData = () => {
   const handleOptionClick = (id: string) => {
     dispatch(selectQuizSubject(id));
   };
+  const handlePostSubmitProcess = () => {
+    dispatch(proceedToNextQuestion());
+  };
   const handleListButtonClick = () => {
-    if (!isAnswerSubmitted) {
+    if (!isAnswerSubmitted && selectedAnswer !== null) {
       dispatch(submitAnswer());
+    } else if (selectedAnswer === null) {
+      setShowErrorMsg(true);
+      setTimeout(() => setShowErrorMsg(false), 2000);
+    }
+
+    if (isAnswerSubmitted && selectedAnswer) {
+      handlePostSubmitProcess();
     }
   };
 
@@ -86,7 +102,7 @@ const useOptionListData = () => {
   };
 
   const renderErrorMessage = () => {
-    return selectedAnswer === null && isAnswerSubmitted ? (
+    return showErrorMsg ? (
       <p className="flex gap-2 items-center justify-center">
         <Icon url="../assets/images/icon-error.svg" /> Please select an answer
       </p>

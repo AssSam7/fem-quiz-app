@@ -58,10 +58,34 @@ export const quizSlice = createSlice({
       state.isCorrectAnswerSelected =
         state.selectedAnswer === state.correctAnswer;
     },
+    proceedToNextQuestion: (state) => {
+      if (
+        state.currentQuestionIndex !== null &&
+        state.totalQuestions !== null &&
+        state.currentQuestionIndex < state.totalQuestions - 1
+      ) {
+        state.currentQuestionIndex += 1;
+        const nextQuestion =
+          state.quizQuestions?.questions[state.currentQuestionIndex];
+        if (nextQuestion) {
+          state.currentQuestion = nextQuestion.question;
+          state.currentOptions = nextQuestion.options;
+          state.correctAnswer = nextQuestion.answer;
+          state.selectedAnswer = null;
+          state.isAnswerSubmitted = false;
+          state.isCorrectAnswerSelected = false;
+        }
+      }
+    },
   },
 });
 
-export const { selectQuizSubject, startQuiz, selectAnswer, submitAnswer } =
-  quizSlice.actions;
+export const {
+  selectQuizSubject,
+  startQuiz,
+  selectAnswer,
+  submitAnswer,
+  proceedToNextQuestion,
+} = quizSlice.actions;
 
 export default quizSlice.reducer;

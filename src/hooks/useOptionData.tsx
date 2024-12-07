@@ -4,6 +4,7 @@ import { useAppDispatch } from "../app/hooks";
 import useSelectData from "./useSelectData";
 import { selectAnswer, startQuiz } from "../features/quiz/quizSlice";
 import { Logo } from "../components/Logo";
+import { Icon } from "../components/Icon";
 
 type Props = (any | string[]) & {
   handleOptionClick: (subjectId: string) => void;
@@ -71,7 +72,7 @@ export const useOptionData = (props: Props) => {
       props.title === selectedAnswer
     ) {
       return (
-        <Logo icon="../assets/images/icon-correct.svg" className="ml-auto" />
+        <Icon url="../assets/images/icon-correct.svg" className="ml-auto" />
       );
     }
     if (
@@ -80,16 +81,17 @@ export const useOptionData = (props: Props) => {
       props.title === selectedAnswer
     ) {
       return (
-        <Logo icon="../assets/images/icon-incorrect.svg" className="ml-auto" />
+        <Icon url="../assets/images/icon-incorrect.svg" className="ml-auto" />
       );
     }
     if (
       isAnswerSubmitted &&
       !isCorrectAnswerSelected &&
-      props.title === correctAnswer
+      props.title === correctAnswer &&
+      selectedAnswer !== null
     ) {
       return (
-        <Logo icon="../assets/images/icon-correct.svg" className="ml-auto" />
+        <Icon url="../assets/images/icon-correct.svg" className="ml-auto" />
       );
     }
   };
