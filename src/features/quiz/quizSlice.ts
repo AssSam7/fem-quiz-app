@@ -50,6 +50,9 @@ export const quizSlice = createSlice({
       state.currentOptions = filteredQuizSubjects.questions[0].options;
       state.correctAnswer = filteredQuizSubjects.questions[0].answer;
     },
+    selectAnswer: (state, action: PayloadAction<string>) => {
+      state.selectedAnswer = action.payload;
+    },
     submitAnswer: (state) => {
       state.isAnswerSubmitted = true;
       state.isCorrectAnswerSelected =
@@ -58,6 +61,7 @@ export const quizSlice = createSlice({
   },
 });
 
-export const { selectQuizSubject, startQuiz, submitAnswer } = quizSlice.actions;
+export const { selectQuizSubject, startQuiz, selectAnswer, submitAnswer } =
+  quizSlice.actions;
 
 export default quizSlice.reducer;

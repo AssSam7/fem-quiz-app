@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useAppDispatch } from "../app/hooks";
 import useSelectData from "./useSelectData";
-import { startQuiz } from "../features/quiz/quizSlice";
+import { selectAnswer, startQuiz } from "../features/quiz/quizSlice";
 import { Logo } from "../components/Logo";
 
 type Props = (any | string[]) & {
@@ -10,18 +10,24 @@ type Props = (any | string[]) & {
 };
 
 export const useOptionData = (props: Props) => {
+  /* RTK Selectors */
+  const { quizStarted, selectedAnswer } = useSelectData();
+
+  /* States & Consts */
   const [hover, setHover] = useState(false);
   const dispatch = useAppDispatch();
 
-  const { quizStarted } = useSelectData();
-
+  /* Handler Functions */
   const handleClick = () => {
     props.handleOptionClick(props.id);
     if (!quizStarted) {
       dispatch(startQuiz());
+    } else {
+      dispatch(selectAnswer(props?.title));
     }
   };
 
+  /* Functional Logic */
   const getOptionName = () => {
     if (props.id === 1) {
       return "A";
@@ -32,7 +38,14 @@ export const useOptionData = (props: Props) => {
     }
     return "D";
   };
+  const getOptionSelectedStyles = () => {
+    if (selectedAnswer === props.title) {
+      return "border-purple border-4 option-active";
+    }
+    return "";
+  };
 
+  /* Render Functions */
   const renderLogo = () => {
     return props?.icon ? (
       <Logo key={props?.id} bgColor={props?.iconFillColor} icon={props?.icon} />
@@ -46,9 +59,11 @@ export const useOptionData = (props: Props) => {
     );
   };
 
+  /* Return Data */
   return {
     setHover,
     handleClick,
     renderLogo,
+    getOptionSelectedStyles,
   };
 };

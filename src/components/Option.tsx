@@ -7,11 +7,12 @@ type Props = (any | string[]) & {
 };
 
 export const Option = (props: Props) => {
-  const { setHover, handleClick, renderLogo } = useOptionData(props);
+  const { setHover, handleClick, renderLogo, getOptionSelectedStyles } =
+    useOptionData(props);
 
   return (
     <li
-      className="option"
+      className={`option ${getOptionSelectedStyles()}`}
       role="button"
       onClick={handleClick}
       onMouseEnter={() => setHover(true)}

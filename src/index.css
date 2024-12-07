@@ -55,7 +55,7 @@ body {
 
   /* Quiz Card */
   .quiz-card {
-    @apply mt-[60px] min-h-[58vh] grid grid-cols-[auto_auto] justify-between md:justify-normal md:gap-[64px];
+    @apply mt-[80px] min-h-[58vh] grid grid-cols-[auto_auto] justify-between md:justify-normal md:gap-[64px];
   }
 
   .welcome-content {
@@ -67,7 +67,7 @@ body {
     @apply w-[35vw] flex flex-col justify-between;
   }
 
-  /* Option List & Items */
+  /* Option List  */
   .options-container {
     @apply w-[40vw] flex flex-col gap-5;
   }
@@ -75,12 +75,13 @@ body {
     @apply md:w-full flex-1 flex flex-col justify-between gap-5;
   }
 
+  /* Option */
   .option {
     @apply list-none cursor-pointer;
     @apply h-[96px] md:h-[80px] w-full rounded-[24px] bg-pure-white dark:bg-navy;
     @apply shadow-lg;
     @apply p-[20px] flex items-center gap-7;
-    @apply hover:translate-y-[-5px] transition-all;
+    @apply hover:translate-y-[-5px] transition-all duration-200;
   }
 
   .option:hover .logo {
@@ -94,5 +95,11 @@ body {
   .option-hover-logo-styles {
     @apply text-purple;
     background-color: #f6e7ff !important;
+  }
+
+  /* Option Active/Selected */
+  .option.option-active .logo {
+    background-color: #a729f5 !important;
+    color: #ffffff !important;
   }
 }

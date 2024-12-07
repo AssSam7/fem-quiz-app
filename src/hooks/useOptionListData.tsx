@@ -18,7 +18,7 @@ const useOptionListData = () => {
   /* Variables */
   const dispatch = useAppDispatch();
   const getOptionsContainerHeightStyles = () =>
-    quizStarted ? { height: "65vh" } : {};
+    quizStarted ? { height: "58vh" } : {};
 
   /* Functional Logic */
   const transformOptions = (options: string[] | null) => {
@@ -46,7 +46,9 @@ const useOptionListData = () => {
         className="mt-5 bg-purple text-pure-white p-7 rounded-2xl text-base font-semibold hover:bg-purple/50 h-[92px]"
         onClick={handleListButtonClick}
       >
-        Submit Answer
+        {isAnswerSubmitted && selectedAnswer
+          ? "Next Question"
+          : "Submit Answer"}
       </button>
     ) : null;
   };
@@ -71,7 +73,7 @@ const useOptionListData = () => {
     ) : null;
   };
 
-  /* Return data */
+  /* Return Data */
   return {
     getOptionsContainerHeightStyles,
     renderOptionListButton,
