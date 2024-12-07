@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useAppSelector } from "../app/hooks";
 
 const useAppData = () => {
   /* Theme Switcher Code */
@@ -20,27 +19,11 @@ const useAppData = () => {
     document.querySelector("html")?.classList.add(themeMode);
   }, [themeMode]);
 
-  /* Quiz Slice */
-  const quizSubjects = useAppSelector((state) => state.quizSubjects);
-  const quizStarted = useAppSelector((state) => state.quizStarted);
-  const quizQuestions = useAppSelector((state) => state.quizQuestions);
-  const currentQuestionIndex = useAppSelector(
-    (state) => state.currentQuestionIndex
-  );
-  const totalQuestions = useAppSelector((state) => state.totalQuestions);
-  const currentQuestion = useAppSelector((state) => state.currentQuestion);
-
   return {
     themeMode,
     themeModeClass,
     setDarkMode,
     setLightMode,
-    quizSubjects,
-    quizStarted,
-    quizQuestions,
-    currentQuestionIndex,
-    totalQuestions,
-    currentQuestion,
   };
 };
 

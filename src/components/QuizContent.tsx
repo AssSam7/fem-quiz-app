@@ -1,10 +1,11 @@
-import useAppData from "../hooks/useAppData";
+import useSelectData from "../hooks/useSelectData";
 import { QuestionContent } from "./QuestionContent";
 import { WelcomeContent } from "./WelcomeContent";
 
 export const QuizContent = () => {
   const { quizStarted, currentQuestionIndex, totalQuestions, currentQuestion } =
-    useAppData();
+    useSelectData();
+
   return (
     <>
       {quizStarted ? (

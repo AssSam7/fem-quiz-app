@@ -1,8 +1,5 @@
 // @flow
-import { useState } from "react";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { startQuiz } from "../features/quiz/quizSlice";
-import { Logo } from "./Logo";
+import { useOptionData } from "../hooks/useOptionData";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Props = (any | string[]) & {
@@ -10,29 +7,7 @@ type Props = (any | string[]) & {
 };
 
 export const Option = (props: Props) => {
-  const { handleOptionClick } = props;
-  const [hover, setHover] = useState(false);
-  const dispatch = useAppDispatch();
-
-  const quizStarted = useAppSelector((state) => state.quizStarted);
-
-  const handleClick = () => {
-    handleOptionClick(props?.id);
-    if (!quizStarted) {
-      dispatch(startQuiz());
-    }
-  };
-
-  const getOptionName = () => {
-    if (props?.id === 1) {
-      return "A";
-    } else if (props?.id === 2) {
-      return "B";
-    } else if (props?.id === 3) {
-      return "C";
-    }
-    return "D";
-  };
+  const { setHover, handleClick, renderLogo } = useOptionData(props);
 
   return (
     <li
@@ -42,20 +17,7 @@ export const Option = (props: Props) => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      {props?.icon ? (
-        <Logo
-          key={props?.id}
-          bgColor={props?.iconFillColor}
-          icon={props?.icon}
-        />
-      ) : (
-        <Logo
-          key={props?.id}
-          bgColor="#F4F6FA"
-          text={getOptionName()}
-          className={hover ? "bg-logo-hover" : ""}
-        />
-      )}
+      {renderLogo()}
       <p className="text-dark-navy font-medium text-base dark:text-pure-white">
         {props?.title}
       </p>
