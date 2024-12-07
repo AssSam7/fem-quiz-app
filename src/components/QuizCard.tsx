@@ -2,7 +2,7 @@ import useQuizCardData from "../hooks/useQuizCardData";
 import { OptionList } from "./OptionList";
 
 type Props = {
-  children?: React.ReactNode;
+  children: React.ReactNode;
 };
 export const QuizCard = ({ children }: Props) => {
   const { getQuizCardClasses } = useQuizCardData();

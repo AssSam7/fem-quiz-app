@@ -1,9 +1,10 @@
 // @flow
 
+import { Logo } from "../components/Logo";
 import useSelectData from "./useSelectData";
 
 export const useHeaderData = () => {
-  const quizQuestions = useSelectData();
+  const { quizQuestions } = useSelectData();
 
   const renderHeaderLogo = () => {
     return quizQuestions?.icon ? (

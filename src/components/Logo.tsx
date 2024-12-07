@@ -9,7 +9,6 @@ type LogoProps = {
 
 export const Logo = (props: LogoProps) => {
   const { icon, bgColor, text, className } = props;
-  console.log(`BG Color: ${bgColor}`);
 
   return (
     <div

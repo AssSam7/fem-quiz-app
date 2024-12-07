@@ -12,7 +12,6 @@ export const Icon = (props: Props) => {
       const importedIcon = await import(`${url}`);
       setIcon(importedIcon.default);
     }
-    console.log(icon);
     importIcon();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
