@@ -14,9 +14,9 @@ export const Logo = (props: LogoProps) => {
 
   return (
     <div
-      className={`logo ${
-        !icon ? "hover:option-hover-logo-styles" : ""
-      } ${className}`}
+      className={`logo ${!icon ? "hover:option-hover-logo-styles" : ""} ${
+        className ? className : ""
+      }`}
       style={bgColor ? { backgroundColor: bgColor } : {}}
     >
       {icon ? (

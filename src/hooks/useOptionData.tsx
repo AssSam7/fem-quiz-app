@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch } from "../app/hooks";
 import useSelectData from "./useSelectData";
 import { selectAnswer, startQuiz } from "../features/quiz/quizSlice";
@@ -22,6 +22,18 @@ export const useOptionData = (props: Props) => {
 
   /* States & Consts */
   const [hover, setHover] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [iconDimesions, setIconDimension] = useState(
+    windowWidth < 480
+      ? {
+          width: "28.5",
+          height: "28.5",
+        }
+      : {
+          width: "40",
+          height: "40",
+        }
+  );
   const dispatch = useAppDispatch();
 
   /* Handler Functions */
@@ -55,7 +67,13 @@ export const useOptionData = (props: Props) => {
   /* Render Functions */
   const renderLogo = () => {
     return props?.icon ? (
-      <Logo key={props?.id} bgColor={props?.iconFillColor} icon={props?.icon} />
+      <Logo
+        key={props?.id}
+        bgColor={props?.iconFillColor}
+        icon={props?.icon}
+        iconWidth={iconDimesions.width}
+        iconHeight={iconDimesions.height}
+      />
     ) : (
       <Logo
         key={props?.id}
@@ -95,6 +113,30 @@ export const useOptionData = (props: Props) => {
       );
     }
   };
+
+  /* Side Effects */
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      if (windowWidth < 480) {
+        setIconDimension({
+          width: "28.5",
+          height: "28.5",
+        });
+      } else {
+        setIconDimension({
+          width: "40",
+          height: "40",
+        });
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [windowWidth]);
 
   /* Return Data */
   return {

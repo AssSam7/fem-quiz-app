@@ -56,7 +56,14 @@ body {
     @apply flex justify-between items-center md:pt-10;
   }
   .logo {
-    @apply text-grey-navy flex gap-5 items-center justify-center min-w-[56px] sm:min-w-[40px] min-h-[56px] sm:min-h-[40px] p-3 rounded-md;
+    @apply text-grey-navy flex gap-5 items-center justify-center min-w-[56px] min-h-[56px] p-3 sm:p-0 rounded-md;
+    /* Mobile Styles */
+    @media screen and (max-width: 480px) {
+      min-width: 40px !important;
+      min-height: 40px !important;
+      max-width: 40px !important;
+      max-height: 40px !important;
+    }
   }
 
   /* Quiz Card */
@@ -79,7 +86,7 @@ body {
 
   /* Option List  */
   .options-container {
-    @apply w-[40vw] flex flex-col gap-5;
+    @apply w-[40vw] flex flex-col gap-5 sm:gap-2;
     /* Tablet styles */
     @apply md:w-full md:h-full;
   }

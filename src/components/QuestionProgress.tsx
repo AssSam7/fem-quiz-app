@@ -10,7 +10,7 @@ export const QuestionProgress = () => {
   }%`;
 
   return (
-    <div className="w-full rounded-2xl bg-pure-white p-1 h-[16px] flex">
+    <div className="w-full rounded-2xl bg-pure-white dark:bg-navy p-1 h-[16px] flex">
       <p
         className="bg-purple h-[8px] rounded-2xl"
         style={{ width: questionProgressWidth }}

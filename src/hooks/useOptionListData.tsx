@@ -80,7 +80,7 @@ const useOptionListData = () => {
   const renderOptionListButton = () => {
     return quizStarted ? (
       <button
-        className="mt-5 bg-purple text-pure-white p-7 rounded-2xl text-base font-semibold hover:bg-purple/50 h-[92px]"
+        className="flex items-center justify-center mt-5 bg-purple text-pure-white p-7 rounded-2xl text-base sm:text-[18px] font-semibold hover:bg-purple/50 h-[92px] sm:h-[72px]"
         onClick={handleListButtonClick}
       >
         {isAnswerSubmitted && selectedAnswer

@@ -20,10 +20,10 @@ export const QuestionContent = ({
       style={themeMode === "dark" ? { color: "inherit" } : {}}
     >
       <div className="flex flex-col gap-7 md:gap-5">
-        <h4 className="font-rubik-italic font-light text-grey-navy dark:text-light-bluish text-[20px]">
+        <h4 className="font-rubik-italic font-light text-grey-navy dark:text-light-bluish text-[20px] sm:text-[14px]">
           Question {questionNumber} of {totalQuestions}
         </h4>
-        <h3 className="text-dark-navy dark:text-pure-white font-normal">
+        <h3 className="text-dark-navy dark:text-pure-white font-normal sm:text-[20px]">
           {question}
         </h3>
       </div>
