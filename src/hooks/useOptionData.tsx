@@ -46,7 +46,7 @@ export const useOptionData = (props: Props) => {
     return "D";
   };
   const getOptionSelectedStyles = () => {
-    if (selectedAnswer === props.title) {
+    if (selectedAnswer === props.title && !isAnswerSubmitted) {
       return "border-purple border-4 option-active";
     }
     return "";

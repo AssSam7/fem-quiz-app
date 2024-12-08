@@ -27,4 +27,6 @@ export type QuizSliceInitialState = {
   selectedAnswer: string | null;
   isCorrectAnswerSelected: boolean;
   isAnswerSubmitted: boolean;
+  quizScore: number;
+  quizEnded: boolean;
 };

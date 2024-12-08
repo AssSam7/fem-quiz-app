@@ -29,6 +29,8 @@ const initialState: QuizSliceInitialState = {
   selectedAnswer: null,
   isCorrectAnswerSelected: false,
   isAnswerSubmitted: false,
+  quizScore: 0,
+  quizEnded: false,
 };
 
 export const quizSlice = createSlice({
@@ -57,6 +59,7 @@ export const quizSlice = createSlice({
       state.isAnswerSubmitted = true;
       state.isCorrectAnswerSelected =
         state.selectedAnswer === state.correctAnswer;
+      state.quizScore += state.isCorrectAnswerSelected ? 1 : 0;
     },
     proceedToNextQuestion: (state) => {
       if (
@@ -75,6 +78,13 @@ export const quizSlice = createSlice({
           state.isAnswerSubmitted = false;
           state.isCorrectAnswerSelected = false;
         }
+      } else if (
+        state.currentQuestionIndex !== null &&
+        state.totalQuestions !== null &&
+        state.currentQuestionIndex === state.totalQuestions - 1
+      ) {
+        state.quizStarted = false;
+        state.quizEnded = true;
       }
     },
   },
