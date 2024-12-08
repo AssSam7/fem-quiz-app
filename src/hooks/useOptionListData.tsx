@@ -94,8 +94,8 @@ const useOptionListData = () => {
           <Option
             key={item.id || i}
             handleOptionClick={handleOptionClick}
-            {...item}
             optionBorderStyles={getOptionBorderStyles(item.title)}
+            {...item}
           />
         ))
       : null;
@@ -111,6 +111,7 @@ const useOptionListData = () => {
 
   /* Return Data */
   return {
+    quizStarted,
     getOptionsContainerHeightStyles,
     renderOptionListButton,
     renderQuizOptions,
