@@ -105,7 +105,7 @@ const useOptionListData = () => {
 
   const renderErrorMessage = () => {
     return showErrorMsg ? (
-      <p className="flex gap-2 items-center justify-center">
+      <p className="flex gap-2 items-center justify-center pb-5">
         <Icon url="../assets/images/icon-error.svg" /> Please select an answer
       </p>
     ) : null;

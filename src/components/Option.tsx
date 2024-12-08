@@ -26,7 +26,7 @@ export const Option = (props: Props) => {
       onMouseLeave={() => setHover(false)}
     >
       {renderLogo()}
-      <p className="text-dark-navy font-medium text-base dark:text-pure-white">
+      <p className="text-dark-navy font-medium text-base sm:text-[18px] dark:text-pure-white">
         {props?.title}
       </p>
       {renderResultLogo()}

@@ -8,7 +8,13 @@ export const useHeaderData = () => {
 
   const renderHeaderLogo = () => {
     return quizQuestions?.icon ? (
-      <Logo icon={quizQuestions?.icon} bgColor={quizQuestions?.iconFillColor} />
+      <div className="flex gap-5 items-center">
+        <Logo
+          icon={quizQuestions?.icon}
+          bgColor={quizQuestions?.iconFillColor}
+        />
+        <p className="text-dark-navy text-[28px]">{quizQuestions.title}</p>
+      </div>
     ) : null;
   };
 

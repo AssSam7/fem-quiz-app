@@ -12,7 +12,7 @@ export const WelcomeContent = () => {
         Welcome to the
         <p className="font-bold">Frontend Quiz!</p>
       </h2>
-      <h4 className="font-rubik-italic font-light text-grey-navy dark:text-light-bluish text-[20px]">
+      <h4 className="font-rubik-italic font-light text-grey-navy dark:text-light-bluish text-[20px] sm:text-[14px]">
         Pick a subject to get started
       </h4>
     </div>

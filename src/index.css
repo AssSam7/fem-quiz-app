@@ -21,7 +21,7 @@ body {
     @apply text-3xl;
   }
   h2 {
-    @apply text-2xl;
+    @apply text-2xl sm:text-[40px];
   }
   h3 {
     @apply text-lg;
@@ -30,14 +30,20 @@ body {
 
 @layer components {
   .wrapper {
-    @apply w-full min-h-[120vh] md:min-h-[100vh] bg-no-repeat bg-cover bg-light-bluish;
-    @apply bg-[url('./assets/images/pattern-background-desktop-light.svg')] md:bg-[url('./assets/images/pattern-background-tablet-light.svg')];
-    background-position: 0% 12%;
+    /* background-position: 0% 12%; */
+    @apply bg-[url('./assets/images/pattern-background-desktop-light.svg')] w-full min-h-[120vh] md:min-h-[105vh] bg-no-repeat bg-cover bg-light-bluish;
+    /* Tablet Styles */
+    @apply md:bg-[url('./assets/images/pattern-background-tablet-light.svg')];
+    /* Mobile Styles */
+    @apply sm:bg-[url('./assets/images/pattern-background-mobile-light.svg')];
   }
   /* Dark Background Img */
   .bg-dark-img {
-    @apply bg-dark-navy;
-    background-image: url("./assets/images/pattern-background-desktop-dark.svg");
+    @apply bg-dark-navy bg-[url("./assets/images/pattern-background-desktop-dark.svg")];
+    /* Tablet Styles */
+    @apply md:bg-[url('./assets/images/pattern-background-tablet-dark.svg')];
+    /* Mobile Styles */
+    @apply sm:bg-[url('./assets/images/pattern-background-mobile-dark.svg')];
   }
 
   /* Main Container */
@@ -50,14 +56,14 @@ body {
     @apply flex justify-between items-center md:pt-10;
   }
   .logo {
-    @apply text-grey-navy flex gap-5 items-center justify-center min-w-[56px] min-h-[56px] p-3 rounded-md;
+    @apply text-grey-navy flex gap-5 items-center justify-center min-w-[56px] sm:min-w-[40px] min-h-[56px] sm:min-h-[40px] p-3 rounded-md;
   }
 
   /* Quiz Card */
   .quiz-card {
     @apply mt-[80px] min-h-[58vh] grid grid-cols-[min-content_auto] justify-between;
     /* Tablet Styles */
-    @apply md:mt-[20px] md:grid-cols-1 md:grid-rows-[0.25fr_0.75fr] md:gap-[55px];
+    @apply md:grid-cols-1 md:grid-rows-[0.25fr_0.75fr] md:gap-[55px];
   }
 
   .welcome-content {
@@ -68,7 +74,7 @@ body {
   .question-content {
     @apply w-[35vw] flex flex-col justify-between md:gap-10;
     /* Tablet Styles */
-    @apply md:w-full md:text-center;
+    @apply md:w-full md:text-left;
   }
 
   /* Option List  */
@@ -86,7 +92,7 @@ body {
     @apply list-none cursor-pointer;
     @apply h-[96px] md:h-[80px] w-full rounded-[24px] bg-pure-white dark:bg-navy;
     @apply shadow-lg;
-    @apply p-[20px] flex items-center gap-7;
+    @apply p-[20px] flex items-center gap-7 sm:gap-[16px];
     @apply hover:translate-y-[-5px] transition-all duration-200;
   }
 

@@ -5,6 +5,8 @@ type LogoProps = {
   bgColor?: string;
   text?: string;
   className?: string;
+  iconWidth?: string;
+  iconHeight?: string;
 };
 
 export const Logo = (props: LogoProps) => {
@@ -18,7 +20,7 @@ export const Logo = (props: LogoProps) => {
       style={bgColor ? { backgroundColor: bgColor } : {}}
     >
       {icon ? (
-        <Icon url={icon} />
+        <Icon url={icon} width={props?.iconWidth} height={props?.iconHeight} />
       ) : (
         <span className="text-base font-normal">{text}</span>
       )}
