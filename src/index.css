@@ -30,7 +30,7 @@ body {
 
 @layer components {
   .wrapper {
-    @apply w-full min-h-[120vh] md:min-h-[125vh] bg-no-repeat bg-cover bg-light-bluish;
+    @apply w-full min-h-[120vh] md:min-h-[100vh] bg-no-repeat bg-cover bg-light-bluish;
     @apply bg-[url('./assets/images/pattern-background-desktop-light.svg')] md:bg-[url('./assets/images/pattern-background-tablet-light.svg')];
     background-position: 0% 12%;
   }
@@ -42,7 +42,7 @@ body {
 
   /* Main Container */
   .container {
-    @apply w-[80vw] pt-[50px] md:pt-0 md:h-full;
+    @apply w-[80vw] md:w-[85vw] pt-[50px] md:pt-0 md:h-full;
   }
 
   /* Header Section */
@@ -57,7 +57,7 @@ body {
   .quiz-card {
     @apply mt-[80px] min-h-[58vh] grid grid-cols-[min-content_auto] justify-between;
     /* Tablet Styles */
-    @apply md:grid-cols-1 md:grid-rows-[0.4fr_0.6fr] md:gap-[64px];
+    @apply md:mt-[20px] md:grid-cols-1 md:grid-rows-[0.25fr_0.75fr] md:gap-[55px];
   }
 
   .welcome-content {
@@ -66,7 +66,7 @@ body {
 
   /* Question */
   .question-content {
-    @apply w-[35vw] flex flex-col justify-between;
+    @apply w-[35vw] flex flex-col justify-between md:gap-10;
     /* Tablet Styles */
     @apply md:w-full md:text-center;
   }

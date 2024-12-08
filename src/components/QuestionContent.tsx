@@ -19,7 +19,7 @@ export const QuestionContent = ({
       className="question-content"
       style={themeMode === "dark" ? { color: "inherit" } : {}}
     >
-      <div className="flex flex-col gap-7">
+      <div className="flex flex-col gap-7 md:gap-5">
         <h4 className="font-rubik-italic font-light text-grey-navy dark:text-light-bluish text-[20px]">
           Question {questionNumber} of {totalQuestions}
         </h4>

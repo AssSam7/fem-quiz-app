@@ -25,7 +25,9 @@ const useOptionListData = () => {
   const [showErrorMsg, setShowErrorMsg] = useState(false);
   const dispatch = useAppDispatch();
   const getOptionsContainerHeightStyles = () =>
-    quizStarted ? { height: "58vh" } : {};
+    quizStarted
+      ? { height: `${window.innerWidth <= 767 ? "50vh" : "58vh"} ` }
+      : {};
 
   /* Functional Logic */
   const transformOptions = (options: string[] | null) => {
