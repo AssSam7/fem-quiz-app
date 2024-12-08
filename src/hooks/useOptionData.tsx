@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { useAppDispatch } from "../app/hooks";
 import useSelectData from "./useSelectData";
 import { selectAnswer, startQuiz } from "../features/quiz/quizSlice";
-import { Logo } from "../components/Logo";
-import { Icon } from "../components/Icon";
+import { Logo } from "../components/common/Logo";
+import { Icon } from "../components/common/Icon";
 
 type Props = (any | string[]) & {
   handleOptionClick: (subjectId: string) => void;

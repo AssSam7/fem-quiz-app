@@ -1,5 +1,5 @@
 import useSelectData from "../hooks/useSelectData";
-import { Logo } from "./Logo";
+import { Logo } from "./common/Logo";
 
 export const QuizResultCard = () => {
   const { quizQuestions, quizScore, totalQuestions } = useSelectData();

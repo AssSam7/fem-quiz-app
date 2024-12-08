@@ -1,5 +1,5 @@
 import useQuiz from "../context/Theme";
-import { Icon } from "./Icon";
+import { Icon } from "./common/Icon";
 
 export const ThemeSwitcher = () => {
   const {

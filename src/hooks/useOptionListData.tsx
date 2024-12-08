@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import { useAppDispatch } from "../app/hooks";
-import { Icon } from "../components/Icon";
+import { Icon } from "../components/common/Icon";
 import { Option } from "../components/Option";
 import {
   proceedToNextQuestion,
