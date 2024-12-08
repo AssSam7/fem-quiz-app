@@ -19,6 +19,8 @@ const useOptionListData = () => {
     selectedAnswer,
     isAnswerSubmitted,
     isCorrectAnswerSelected,
+    currentQuestionIndex,
+    totalQuestions,
   } = useSelectData();
 
   /* States & Variables */
@@ -55,6 +57,15 @@ const useOptionListData = () => {
     }
     return "";
   };
+  const getOptionListButtonText = () => {
+    if (isAnswerSubmitted && selectedAnswer) {
+      return "Next Question";
+    } else if (currentQuestionIndex === (totalQuestions ?? 1) - 1) {
+      return "Finish Quiz";
+    } else if (selectedAnswer === null) {
+      return "Submit Answer";
+    }
+  };
 
   /* Handler Functions */
   const handleOptionClick = (id: string) => {
@@ -83,9 +94,7 @@ const useOptionListData = () => {
         className="flex items-center justify-center mt-5 bg-purple text-pure-white p-7 rounded-2xl text-base sm:text-[18px] font-semibold hover:bg-purple/50 h-[92px] sm:h-[72px]"
         onClick={handleListButtonClick}
       >
-        {isAnswerSubmitted && selectedAnswer
-          ? "Next Question"
-          : "Submit Answer"}
+        {getOptionListButtonText()}
       </button>
     ) : null;
   };

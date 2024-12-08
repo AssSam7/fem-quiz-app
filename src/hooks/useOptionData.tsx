@@ -90,7 +90,7 @@ export const useOptionData = (props: Props) => {
       props.title === selectedAnswer
     ) {
       return (
-        <Icon url="../assets/images/icon-correct.svg" className="ml-auto" />
+        <Icon url="../../assets/images/icon-correct.svg" className="ml-auto" />
       );
     }
     if (
@@ -99,7 +99,10 @@ export const useOptionData = (props: Props) => {
       props.title === selectedAnswer
     ) {
       return (
-        <Icon url="../assets/images/icon-incorrect.svg" className="ml-auto" />
+        <Icon
+          url="../../assets/images/icon-incorrect.svg"
+          className="ml-auto"
+        />
       );
     }
     if (
@@ -109,7 +112,7 @@ export const useOptionData = (props: Props) => {
       selectedAnswer !== null
     ) {
       return (
-        <Icon url="../assets/images/icon-correct.svg" className="ml-auto" />
+        <Icon url="../../assets/images/icon-correct.svg" className="ml-auto" />
       );
     }
   };

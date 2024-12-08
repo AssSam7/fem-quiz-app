@@ -20,7 +20,7 @@ export const ThemeSwitcher = () => {
   return (
     <div className="ml-auto flex gap-4 items-center">
       <Icon
-        url={`../assets/images/icon-sun-${
+        url={`../../assets/images/icon-sun-${
           theme === "light" ? "dark" : "light"
         }.svg`}
       />
@@ -35,7 +35,7 @@ export const ThemeSwitcher = () => {
         <div className="w-[48px] h-[28px] bg-[#A729F5] peer-focus:outline-none  rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-[101%] peer-checked:after:border-pure-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-pure-white after:rounded-full after:h-[20px] after:w-[20px] after:transition-all  peer-checked:bg-[#A729F5]"></div>
       </label>
       <Icon
-        url={`../assets/images/icon-moon-${
+        url={`../../assets/images/icon-moon-${
           theme === "light" ? "dark" : "light"
         }.svg`}
       />
