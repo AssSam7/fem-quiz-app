@@ -129,4 +129,9 @@ body {
     background-color: #ee5454 !important;
     color: #ffffff !important;
   }
+
+  /* Button */
+  .btn-primary {
+    @apply flex items-center justify-center mt-5 bg-purple text-pure-white p-7 rounded-2xl text-base sm:text-[18px] font-semibold hover:bg-purple/50 h-[92px] sm:h-[72px];
+  }
 }

@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
+import useSelectData from "./useSelectData";
+import { QuizCard } from "../components/QuizCard";
+import { QuizContent } from "../components/QuizContent";
+import { QuizResultCard } from "../components/QuizResultCard";
 
 const useAppData = () => {
+  const { quizEnded } = useSelectData();
   /* Theme Switcher Code */
   const [themeMode, setThemeMode] = useState("light");
 
@@ -19,11 +24,22 @@ const useAppData = () => {
     document.querySelector("html")?.classList.add(themeMode);
   }, [themeMode]);
 
+  const renderAppContent = () => {
+    return quizEnded ? (
+      <QuizResultCard />
+    ) : (
+      <QuizCard>
+        <QuizContent />
+      </QuizCard>
+    );
+  };
+
   return {
     themeMode,
     themeModeClass,
     setDarkMode,
     setLightMode,
+    renderAppContent,
   };
 };
 

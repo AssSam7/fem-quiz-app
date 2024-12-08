@@ -18,7 +18,7 @@ export const ThemeSwitcher = () => {
   };
 
   return (
-    <div className="ml-auto flex gap-2 items-center">
+    <div className="ml-auto flex gap-4 items-center">
       <Icon
         url={`../assets/images/icon-sun-${
           theme === "light" ? "dark" : "light"

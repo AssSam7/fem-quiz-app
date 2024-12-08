@@ -32,6 +32,8 @@ const useSelectData = () => {
   const isAnswerSubmitted = useAppSelector(
     (state: RootState) => state.isAnswerSubmitted
   );
+  const quizScore = useAppSelector((state: RootState) => state.quizScore);
+  const quizEnded = useAppSelector((state: RootState) => state.quizEnded);
 
   return {
     quizSubjects,
@@ -46,6 +48,8 @@ const useSelectData = () => {
     selectedAnswer,
     isCorrectAnswerSelected,
     isAnswerSubmitted,
+    quizScore,
+    quizEnded,
   };
 };
 
