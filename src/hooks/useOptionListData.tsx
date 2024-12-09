@@ -26,10 +26,6 @@ const useOptionListData = () => {
   /* States & Variables */
   const [showErrorMsg, setShowErrorMsg] = useState(false);
   const dispatch = useAppDispatch();
-  const getOptionsContainerHeightStyles = () =>
-    quizStarted
-      ? { height: `${window.innerWidth <= 767 ? "50vh" : "58vh"} ` }
-      : {};
 
   /* Functional Logic */
   const transformOptions = (options: string[] | null) => {
@@ -90,10 +86,7 @@ const useOptionListData = () => {
   /* Render Functions */
   const renderOptionListButton = () => {
     return quizStarted ? (
-      <button
-        className="flex items-center justify-center mt-5 bg-purple text-pure-white p-7 rounded-2xl text-base sm:text-[18px] font-semibold hover:bg-purple/50 h-[92px] sm:h-[72px]"
-        onClick={handleListButtonClick}
-      >
+      <button className="btn-primary" onClick={handleListButtonClick}>
         {getOptionListButtonText()}
       </button>
     ) : null;
@@ -115,7 +108,8 @@ const useOptionListData = () => {
   const renderErrorMessage = () => {
     return showErrorMsg ? (
       <p className="flex gap-2 items-center justify-center pb-5">
-        <Icon url="../assets/images/icon-error.svg" /> Please select an answer
+        <Icon url="../../assets/images/icon-error.svg" /> Please select an
+        answer
       </p>
     ) : null;
   };
@@ -123,7 +117,6 @@ const useOptionListData = () => {
   /* Return Data */
   return {
     quizStarted,
-    getOptionsContainerHeightStyles,
     renderOptionListButton,
     renderQuizOptions,
     renderErrorMessage,

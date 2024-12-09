@@ -17,6 +17,14 @@ body {
 }
 
 @layer base {
+  body {
+    background-position: 0% 12%;
+    @apply bg-[url('./assets/images/pattern-background-desktop-light.svg')] w-full bg-no-repeat bg-cover bg-light-bluish;
+    /* Tablet Styles */
+    @apply md:bg-[url('./assets/images/pattern-background-tablet-light.svg')];
+    /* Mobile Styles */
+    @apply sm:bg-[url('./assets/images/pattern-background-mobile-light.svg')];
+  }
   h1 {
     @apply text-3xl;
   }
@@ -29,14 +37,6 @@ body {
 }
 
 @layer components {
-  .wrapper {
-    /* background-position: 0% 12%; */
-    @apply bg-[url('./assets/images/pattern-background-desktop-light.svg')] w-full min-h-[120vh] md:min-h-[105vh] bg-no-repeat bg-cover bg-light-bluish;
-    /* Tablet Styles */
-    @apply md:bg-[url('./assets/images/pattern-background-tablet-light.svg')];
-    /* Mobile Styles */
-    @apply sm:bg-[url('./assets/images/pattern-background-mobile-light.svg')];
-  }
   /* Dark Background Img */
   .bg-dark-img {
     @apply bg-dark-navy bg-[url("./assets/images/pattern-background-desktop-dark.svg")];
@@ -68,9 +68,11 @@ body {
 
   /* Quiz Card */
   .quiz-card {
-    @apply mt-[80px] min-h-[58vh] grid grid-cols-[min-content_auto] justify-between;
+    @apply mt-[80px] mb-[80px] grid grid-cols-[min-content_auto] justify-between;
     /* Tablet Styles */
     @apply md:grid-cols-1 md:grid-rows-[0.25fr_0.75fr] md:gap-[55px];
+    /* Mobile Styles */
+    @apply sm:mt-[40px];
   }
 
   .welcome-content {

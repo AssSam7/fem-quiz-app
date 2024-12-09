@@ -17,11 +17,15 @@ const useAppData = () => {
     setThemeMode("light");
   };
 
-  const themeModeClass = themeMode === "dark" ? "bg-dark-img" : "";
-
   useEffect(() => {
     document.querySelector("html")?.classList.remove("dark", "light");
     document.querySelector("html")?.classList.add(themeMode);
+
+    if (themeMode === "dark") {
+      document.body.classList.add("bg-dark-img");
+    } else if (themeMode === "light") {
+      document.body.classList.remove("bg-dark-img");
+    }
   }, [themeMode]);
 
   const renderAppContent = () => {
@@ -36,7 +40,6 @@ const useAppData = () => {
 
   return {
     themeMode,
-    themeModeClass,
     setDarkMode,
     setLightMode,
     renderAppContent,

@@ -22,7 +22,7 @@ export const Logo = (props: LogoProps) => {
       {icon ? (
         <Icon url={icon} width={props?.iconWidth} height={props?.iconHeight} />
       ) : (
-        <span className="text-base font-normal">{text}</span>
+        <span className="text-base font-normal sm:text-[18px]">{text}</span>
       )}
     </div>
   );

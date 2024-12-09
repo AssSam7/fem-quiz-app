@@ -3,23 +3,16 @@ import { ThemeProvider } from "./context/Theme";
 import useAppData from "./hooks/useAppData";
 
 function App() {
-  const {
-    themeMode,
-    themeModeClass,
-    setDarkMode,
-    setLightMode,
-    renderAppContent,
-  } = useAppData();
+  const { themeMode, setDarkMode, setLightMode, renderAppContent } =
+    useAppData();
 
   return (
     <ThemeProvider value={{ themeMode, setDarkMode, setLightMode }}>
-      <div className={`wrapper ${themeModeClass}`}>
-        <main className="container">
-          <Header />
+      <main className="container">
+        <Header />
 
-          {renderAppContent()}
-        </main>
-      </div>
+        {renderAppContent()}
+      </main>
     </ThemeProvider>
   );
 }

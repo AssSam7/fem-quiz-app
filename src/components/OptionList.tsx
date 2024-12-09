@@ -9,7 +9,6 @@ export const OptionList = (props: Props) => {
 
   const {
     quizStarted,
-    getOptionsContainerHeightStyles,
     renderOptionListButton,
     renderQuizOptions,
     renderErrorMessage,
@@ -17,10 +16,7 @@ export const OptionList = (props: Props) => {
 
   return window.innerWidth <= 767 ? (
     <>
-      <div
-        className="options-container"
-        style={getOptionsContainerHeightStyles()}
-      >
+      <div className="options-container">
         <ul className={className}>{renderQuizOptions()}</ul>
 
         {quizStarted ? (
@@ -33,10 +29,7 @@ export const OptionList = (props: Props) => {
     </>
   ) : (
     <>
-      <div
-        className="options-container"
-        style={getOptionsContainerHeightStyles()}
-      >
+      <div className="options-container">
         <ul className={className}>{renderQuizOptions()}</ul>
       </div>
       {quizStarted ? (
