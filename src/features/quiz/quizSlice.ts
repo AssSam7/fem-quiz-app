@@ -1,6 +1,6 @@
 import { createSlice, nanoid, PayloadAction } from "@reduxjs/toolkit";
 import data from "../../data.json";
-import { QuizSliceInitialState } from "../../types";
+import { QuizSliceInitialState, QuizSubjects } from "../../types";
 
 const getTransformedSubjects = () => {
   return data.quizzes.map((subject) => {
@@ -16,8 +16,22 @@ const getTransformedSubjects = () => {
   });
 };
 
+const shuffleQuestions = (questions: QuizSubjects) => {
+  const shuffledQuestions = [...questions];
+  for (let k = 0; k < shuffledQuestions.length; k++) {
+    for (let i = shuffledQuestions[k].questions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledQuestions[k].questions[i], shuffledQuestions[k].questions[j]] = [
+        shuffledQuestions[k].questions[j],
+        shuffledQuestions[k].questions[i],
+      ];
+    }
+  }
+  return shuffledQuestions;
+};
+
 const initialState: QuizSliceInitialState = {
-  quizSubjects: getTransformedSubjects(),
+  quizSubjects: shuffleQuestions(getTransformedSubjects()),
   subjectId: null,
   quizStarted: false,
   quizQuestions: null,

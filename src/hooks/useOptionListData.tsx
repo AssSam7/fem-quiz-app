@@ -54,11 +54,18 @@ const useOptionListData = () => {
     return "";
   };
   const getOptionListButtonText = () => {
-    if (isAnswerSubmitted && selectedAnswer) {
+    if (
+      isAnswerSubmitted &&
+      selectedAnswer &&
+      (currentQuestionIndex ?? 1) < (totalQuestions ?? 1) - 1
+    ) {
       return "Next Question";
-    } else if (currentQuestionIndex === (totalQuestions ?? 1) - 1) {
+    } else if (
+      currentQuestionIndex === (totalQuestions ?? 1) - 1 &&
+      isAnswerSubmitted
+    ) {
       return "Finish Quiz";
-    } else if (selectedAnswer === null) {
+    } else if ((selectedAnswer || !selectedAnswer) && !isAnswerSubmitted) {
       return "Submit Answer";
     }
   };
