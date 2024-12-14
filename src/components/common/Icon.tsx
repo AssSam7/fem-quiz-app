@@ -6,25 +6,23 @@ type Props = {
   width?: string;
   height?: string;
 };
+
 export const Icon = (props: Props) => {
   const { url } = props;
-  const [icon, setIcon] = useState("");
+  const [icon, setIcon] = useState<string>("");
 
   useEffect(() => {
-    async function importIcon() {
-      const importedIcon = await import(`${url}`);
-      setIcon(importedIcon.default);
-    }
-    importIcon();
+    // Use the URL directly without dynamic import
+    setIcon(`/assets/images/${url}`);
+  }, [url]);
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [icon]);
   return (
     <img
       src={icon}
       className={props?.className}
       width={props?.width}
       height={props?.height}
+      alt=""
     />
   );
 };
