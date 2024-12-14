@@ -19,11 +19,11 @@ body {
 @layer base {
   body {
     background-position: 0% 12%;
-    @apply bg-[url('./assets/images/pattern-background-desktop-light.svg')] w-full bg-no-repeat bg-cover bg-light-bluish;
+    @apply bg-[url('/assets/images/pattern-background-desktop-light.svg')] w-full bg-no-repeat bg-cover bg-light-bluish;
     /* Tablet Styles */
-    @apply md:bg-[url('./assets/images/pattern-background-tablet-light.svg')];
+    @apply md:bg-[url('/assets/images/pattern-background-tablet-light.svg')];
     /* Mobile Styles */
-    @apply sm:bg-[url('./assets/images/pattern-background-mobile-light.svg')];
+    @apply sm:bg-[url('/assets/images/pattern-background-mobile-light.svg')];
   }
   h1 {
     @apply text-3xl;
@@ -39,11 +39,11 @@ body {
 @layer components {
   /* Dark Background Img */
   .bg-dark-img {
-    @apply bg-dark-navy bg-[url("./assets/images/pattern-background-desktop-dark.svg")];
+    @apply bg-dark-navy bg-[url("/assets/images/pattern-background-desktop-dark.svg")];
     /* Tablet Styles */
-    @apply md:bg-[url('./assets/images/pattern-background-tablet-dark.svg')];
+    @apply md:bg-[url('/assets/images/pattern-background-tablet-dark.svg')];
     /* Mobile Styles */
-    @apply sm:bg-[url('./assets/images/pattern-background-mobile-dark.svg')];
+    @apply sm:bg-[url('/assets/images/pattern-background-mobile-dark.svg')];
   }
 
   /* Main Container */

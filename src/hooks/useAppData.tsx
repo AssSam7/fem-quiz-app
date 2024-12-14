@@ -7,7 +7,7 @@ import { QuizResultCard } from "../components/QuizResultCard";
 const useAppData = () => {
   const { quizEnded } = useSelectData();
   /* Theme Switcher Code */
-  const [themeMode, setThemeMode] = useState("light");
+  const [themeMode, setThemeMode] = useState("dark");
 
   const setDarkMode = () => {
     setThemeMode("dark");
