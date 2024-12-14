@@ -48,7 +48,7 @@ body {
 
   /* Main Container */
   .container {
-    @apply w-[80vw] md:w-[85vw] pt-[50px] md:pt-0 md:h-full;
+    @apply w-[80vw] md:w-[85vw] pt-[97px] md:pt-0 md:h-full;
   }
 
   /* Header Section */
