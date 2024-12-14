@@ -101,6 +101,20 @@ export const quizSlice = createSlice({
         state.quizEnded = true;
       }
     },
+    restartQuiz: (state) => {
+      state.quizStarted = false;
+      state.quizQuestions = null;
+      state.currentQuestionIndex = null;
+      state.totalQuestions = null;
+      state.currentQuestion = null;
+      state.currentOptions = null;
+      state.correctAnswer = null;
+      state.selectedAnswer = null;
+      state.isCorrectAnswerSelected = false;
+      state.isAnswerSubmitted = false;
+      state.quizScore = 0;
+      state.quizEnded = false;
+    },
   },
 });
 
@@ -110,6 +124,7 @@ export const {
   selectAnswer,
   submitAnswer,
   proceedToNextQuestion,
+  restartQuiz,
 } = quizSlice.actions;
 
 export default quizSlice.reducer;

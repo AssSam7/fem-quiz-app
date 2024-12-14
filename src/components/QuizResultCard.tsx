@@ -1,8 +1,10 @@
-import useSelectData from "../hooks/useSelectData";
+import useQuizResultCardData from "../hooks/useQuizResultCardData";
 import { Logo } from "./common/Logo";
 
 export const QuizResultCard = () => {
-  const { quizQuestions, quizScore, totalQuestions } = useSelectData();
+  const { quizScore, totalQuestions, quizQuestions, handlePlayAgain } =
+    useQuizResultCardData();
+
   return (
     <div className="w-full flex mt-[80px] justify-between">
       <h2 className="w-[40%] text-dark-navy dark:text-pure-white font-extralight">
@@ -30,7 +32,9 @@ export const QuizResultCard = () => {
             </p>
           </div>
         </div>
-        <button className="btn-primary">Play again</button>
+        <button className="btn-primary" onClick={handlePlayAgain}>
+          Play again
+        </button>
       </div>
     </div>
   );
