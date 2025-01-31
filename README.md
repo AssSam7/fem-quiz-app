@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# Frontend Mentor - Quiz Application (React + TS + TailwindCSS + Vite)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -48,3 +48,6 @@ export default tseslint.config({
   },
 })
 ```
+## LIVE URL 🔥 
+<a href="https://dancing-palmier-13bb31.netlify.app/" target="_blank">Quiz App</a>
+
